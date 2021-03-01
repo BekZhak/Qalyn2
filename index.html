@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Qalyn calculator</title>
+  </head>
+  <body onload='hideTotal()'>
+    <div class="container mt-4 shadow p-3 mb-5 bg-white rounded">
+        <div class="row">
+            <div class="col col-sm-12">
+                <h1 class="text-center">Qalyn calculator</h1>
+                <form action="" id="qalynform" onsubmit="return false;">
+                  <label for="bride_name">Bride's name</label><br>
+                    <input id="name" type="text"><hr>
+                    <label for="starting_bid">Starting bid</label><br>
+                    <input id="startingbid" type="number"><hr>
+                    <label for="education_level">Education level:</label><br>
+                    <select id="education">
+                        <option id="level1" value="blank" class="edu"></option>
+                        <option id="level2" value="1.5" class="edu" name="selecteddegree" onchange="calculateTotal()">Bachelor's degree</option>
+                        <option id="level3" value="1.2" class="edu" name="selecteddegree" onchange="calculateTotal()">College degree</option>
+                        <option id="level4" value="1.05" class="edu" name="selecteddegree" onchange="calculateTotal()">High school degree</option>
+                        <option id="level5" value="0.9" class="edu" name="selecteddegree" onchange="calculateTotal()">Middle school degree</option>
+                    </select>
+                    <hr>
+                    <label for="family_networth">Family networth</label><br>
+                    <select id="networth" name="networth" onchange="calculateTotal()">
+                        <option id="net1" value="blank" class="networth"></option>
+                        <option id="net2" value="2" class="networth">More than 100,000$</option>
+                        <option id="net3" value="1.5" class="networth">Between 50,000$ and 100,000$</option>
+                        <option id="net4" value="1.2" class="networth">Less than 50,000$</option>
+                    </select>
+                    <hr>
+                    <label for="skills">Bride's skills</label><br>
+                    <input type="checkbox" id="skill1" name="skill1" value="100" class="skills" onclick="calculateTotal()"> 
+                    <label for="skill1">Playing on dombra</label><br>
+                    <input type="checkbox" id="skill2" name="skill2" value="200" class="skills" onclick="calculateTotal()">
+                    <label for="skill2">Good cook</label><br>
+                    <input type="checkbox" id="skill3" name="skill3" value="150" class="skills" onclick="calculateTotal()">
+                    <label for="skill3">Easygoing character</label><br>
+                    <input type="checkbox" id="skill4" name="skill4" value="100" class="skills" onclick="calculateTotal()">
+                    <label for="skill4">Sings well</label>
+                    <hr>
+                    <label for="bride_age">Bride's age</label><br>
+                    <p><input id="between18" name="age" type="radio" value="1.5" onclick="calculateTotal()">Between 18-23</p>
+                    <p><input id="between24" name="age" type="radio" value="1.2" onclick="calculateTotal()">Between 24-27</p>
+                    <p><input id="28+" name="age" type="radio" value="0.95" onclick="calculateTotal()">28+</p>
+                    <hr>
+                    <label for="bride_reputation">Bride's reputation</label><br>
+                    <input type="checkbox" id="rep1" name="rep1" value="0.85" class="reputation" onclick="calculateTotal()"> 
+                    <label for="rep1">Gossips about her parent's attitude</label><br>
+                    <input type="checkbox" id="rep2" name="rep2" value="0.9" class="reputation" onclick="calculateTotal()"> 
+                    <label for="rep2">Gossips about her character</label><br>
+                    <input type="checkbox" id="rep3" name="rep3" value="-200" class="reputation" onclick="calculateTotal()"> 
+                    <label for="rep3">General gossips about her person</label><hr>
+                    <label>Love letter</label><br>
+                    <textarea id="love_letter"></textarea>
+                </form>
+                <button id="submit" type="button" class="btn btn-primary" onclick="calculateTotal()">Calculate price</button> 
+                <br>
+                <div id="totalPrice"></div>
+                <hr>
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  </body>
+</html>
